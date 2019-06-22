@@ -17,11 +17,23 @@
 * 根据数据规模推测算法时间复杂度
 
 
-# 题目
+## 题目
 
-349; 350;242; 202; 290; 205; 451; 
-1; 15; 18; 16
-454； 49； 
-447; 149
-219; 217
-220; 
+[todo]220. Contains Duplicate III
+1.Two Sum
+15.3Sum
+16.3Sum Closest
+18.4Sum
+49.Group Anagrams
+149.Max Points on a Line
+202.Happy Number
+205.Isomorphic Strings
+217.Contains Duplicate
+219.Contains Duplicate II
+242.Valid Anagram
+290.Word Pattern
+349.Intersection of Two Arrays
+350.Intersection of Two Arrays II
+447.Number of Boomerangs
+451.Sort Characters By Frequency
+454.4Sum II
