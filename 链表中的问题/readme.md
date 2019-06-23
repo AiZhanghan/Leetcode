@@ -2,6 +2,8 @@
 
 设立链表的虚拟头结点
 
+双指针技术(指针对撞，滑动窗口)
+
 ## 题目
 
 92.Reverse Linked List II
@@ -25,3 +27,19 @@
 21.Merge Two Sorted Lists
 
 24.Swap Nodes in Pairs
+
+25.Reverse Nodes in k-Group
+
+147.Insertion Sort List
+
+148.Sort List(自顶向下归并排序)[to do](自底向上归并排序)
+
+237.Delete Node in a Linked List
+
+19.Remove Nth Node From End of List
+
+61.Rotate List
+
+143.Reorder List
+
+234.Palindrome Linked List

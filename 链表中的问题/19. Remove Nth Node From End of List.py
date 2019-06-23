@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 22 16:57:15 2019
+Created on Sun Jun 23 09:40:30 2019
 
 @author: Administrator
 """
@@ -12,21 +12,23 @@ Created on Sat Jun 22 16:57:15 2019
 #         self.next = None
 
 class Solution:
-    def swapPairs(self, head: ListNode) -> ListNode:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        
+        assert n >= 0
         
         dummy_head = ListNode(0)
         dummy_head.next = head
         
         p = dummy_head
-        while p.next and p.next.next:
-            node1 = p.next
-            node2 = node1.next
-            _next = node2.next
+        q = dummy_head
+        for i in range(n + 1):
+            assert q
+            q = q.next
+        
+        while q:
+            p = p.next
+            q = q.next
             
-            node2.next = node1
-            node1.next = _next
-            p.next = node2
-            
-            p = node1
+        p.next = p.next.next
         
         return dummy_head.next
