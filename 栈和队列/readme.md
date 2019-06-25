@@ -8,7 +8,7 @@
 
 150.Evaluate Reverse Polish Notation
 
-71.[to do]Simplify Path
+[to do]71.Simplify Path
 
 144.Binary Tree Preorder Traversal
 
@@ -16,4 +16,4 @@
 
 145.Binary Tree Postorder Traversal
 
-341.Flatten Nested List Iterator
+[to do]341.Flatten Nested List Iterator

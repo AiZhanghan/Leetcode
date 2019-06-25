@@ -29,6 +29,11 @@ Created on Mon Jun 24 22:17:36 2019
 #        :rtype List[NestedInteger]
 #        """
 
+class Command:
+    def __init__(self, s, nested_integer):
+        self.s = s
+        self.nested_integer = nested_integer
+
 class NestedIterator(object):
 
     def __init__(self, nestedList):
@@ -36,19 +41,37 @@ class NestedIterator(object):
         Initialize your data structure here.
         :type nestedList: List[NestedInteger]
         """
+        self.res = []
+        if not nestedList:
+            return 
+        
+        stack = []
+        stack.append(Command('go', nestedList))
+        
+        while stack:
+            command = stack.pop()
+            
+            if command.s == 'print':
+                self.res.append(command.nested_integer.getInteger())
+            else:
+                for i in range(len(command.nested_integer) - 1, -1, -1):
+                    if command.nested_integer[i].isInteger:
+                        stack.append(Command('print', command.nested_integer[i]))
+                    else:
+                        stack.append(Command('go', command.nested_integer[i]))
         
 
     def next(self):
         """
         :rtype: int
         """
-        
+        return self.res.pop()
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        
+        return self.res
 
 # Your NestedIterator object will be instantiated and called as such:
 # i, v = NestedIterator(nestedList), []
