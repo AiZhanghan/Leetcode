@@ -1,6 +1,10 @@
 # 栈和队列
 
-栈和递归
+* 栈和递归
+* 队列：广度优先遍历
+    * 树：层序遍历
+    * 图：无权图最短路径
+* 优先队列
 
 ## 题目
 
@@ -17,3 +21,21 @@
 145.Binary Tree Postorder Traversal
 
 [to do]341.Flatten Nested List Iterator
+
+102.Binary Tree Level Order Traversal
+
+107.Binary Tree Level Order Traversal II
+
+103.Binary Tree Zigzag Level Order Traversal
+
+199.Binary Tree Right Side View
+
+279.Perfect Squares
+
+127.Word Ladder
+
+[to da]126.Word Ladder II
+
+347.Top K Frequent Elements
+
+23.Merge k Sorted Lists

@@ -55,7 +55,7 @@ class NestedIterator(object):
                 self.res.append(command.nested_integer.getInteger())
             else:
                 for i in range(len(command.nested_integer) - 1, -1, -1):
-                    if command.nested_integer[i].isInteger:
+                    if command.nested_integer[i].isInteger():
                         stack.append(Command('print', command.nested_integer[i]))
                     else:
                         stack.append(Command('go', command.nested_integer[i]))
