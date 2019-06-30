@@ -17,8 +17,11 @@ class Solution:
         if not root:
             return True
         
-        return abs(self.get_depth(root.left) - self.get_depth(root.right)) <= 1
-    
+        if abs(self.get_depth(root.left) - self.get_depth(root.right)) <= 1:
+            return self.isBalanced(root.left) and self.isBalanced(root.right)
+        else:
+            return False
+        
     def get_depth(self, root):
         
         if not root:
