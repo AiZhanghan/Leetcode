@@ -6,40 +6,22 @@
 
 ## 题目
 
-92. Reverse Linked List II
-
-206. Reverse Linked List
-
-83. Remove Duplicates from Sorted List
-
-86. Partition List
-
-328. Odd Even Linked List
-
-2. Add Two Numbers
-
-445. Add Two Numbers II
-
-203. Remove Linked List Elements
-
-82. Remove Duplicates from Sorted List II
-
-21. Merge Two Sorted Lists
-
-24. Swap Nodes in Pairs
-
-25. Reverse Nodes in k-Group
-
-147. Insertion Sort List
-
-148. Sort List(自顶向下归并排序)[to do](自底向上归并排序)
-
-237. Delete Node in a Linked List
-
-19. Remove Nth Node From End of List
-
-61. Rotate List
-
-143. Reorder List
-
-234. Palindrome Linked List
+- 2 Add Two Numbers
+- 19 Remove Nth Node From End of List
+- 21 Merge Two Sorted Lists
+- 24 Swap Nodes in Pairs
+- 25 Reverse Nodes in k-Group
+- 61 Rotate List
+- 82 Remove Duplicates from Sorted List II
+- 83 Remove Duplicates from Sorted List
+- 86 Partition List
+- 92 Reverse Linked List II
+- 143 Reorder List
+- 147 Insertion Sort List
+- 148 Sort List
+- 203 Remove Linked List Elements
+- 206 Reverse Linked List
+- 234 Palindrome Linked List
+- 237 Delete Node in a Linked List
+- 328 Odd Even Linked List
+- 445 Add Two Numbers II
