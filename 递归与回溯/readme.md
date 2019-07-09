@@ -8,6 +8,8 @@
 
 剪枝优化
 
+二维平面：floodfill算法
+
 ## 题目
 
 * 17 Letter Combinations of a Phone Number
@@ -18,7 +20,11 @@
 * 77 Combinations
 * 39 Combination Sum
 * 40 Combination Sum II
-* 216 
-* 78 
-* 90 
-* 401 
+* 216 Combination Sum III
+* 78 Subsets
+* 90 Subsets II
+* 401 Binary Watch[to do]
+* 79 Word Search
+* 200 Number of Islands
+* 130 Surrounded Regions
+* 417 
