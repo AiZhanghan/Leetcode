@@ -27,4 +27,7 @@
 * 79 Word Search
 * 200 Number of Islands
 * 130 Surrounded Regions
-* 417 
+* 417 Pacific Atlantic Water Flow[to do]
+* 51 N-Queens
+* 52 N-Queens II
+* 37 Sudoku Solver[to do]
