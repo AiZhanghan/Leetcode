@@ -10,6 +10,10 @@
 
 最优子结构：通过求子问题的最优解，可以获得原问题的最优解
 
+状态
+
+状态转移
+
 ## 题目
 
 * 70 Climbing Stairs
@@ -20,3 +24,7 @@
 * 91 Decode Ways[to do]
 * 62 Unique Paths
 * 63 Unique Paths II
+* 198 House Robber
+* 213 House Robber II
+* 337 House Robber III
+* 309 Best Time to Buy and Sell Stock with Cooldown[to do]
