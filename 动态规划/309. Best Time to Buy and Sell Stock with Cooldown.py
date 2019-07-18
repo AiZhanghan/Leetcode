@@ -24,3 +24,4 @@ class Solution:
             s2[i] = s1[i - 1] + prices[i]
         
         return max(s0[-1], s2[-1])
+    
