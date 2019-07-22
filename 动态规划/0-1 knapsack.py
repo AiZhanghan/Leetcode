@@ -13,18 +13,36 @@ class Solution:
         if n == 0:
             return 0
         
-        memo = [[-1 for _ in range(C + 1)] for _ in range(n)]
+        memo = [-1 for _ in range(C + 1)]
         
         for j in range(C + 1):
-            memo[0][j] = (v[0] if j >= w[0] else 0)
+            memo[j] = (v[0] if j >= w[0] else 0)
             
         for i in range(n):
-            for j in range(C + 1):
-                memo[i][j] = memo[i - 1][j]
-                if j >= w[i]:
-                    memo[i][j] = max(memo[i][j], v[i] + memo[i - 1][j - w[i]])
+            j = C
+            while j >= w[i]:
+                memo[j] = max(memo[j], v[i] + memo[j - w[i]])
+                j -= 1
         
-        return memo[n - 1][C]
+        return memo[(n - 1) % 2][C]
+        
+#        assert len(w) ==len(v)
+#        n = len(w)
+#        if n == 0:
+#            return 0
+#        
+#        memo = [[-1 for _ in range(C + 1)] for _ in range(2)]
+#        
+#        for j in range(C + 1):
+#            memo[0][j] = (v[0] if j >= w[0] else 0)
+#            
+#        for i in range(n):
+#            for j in range(C + 1):
+#                memo[i % 2][j] = memo[(i - 1) % 2][j]
+#                if j >= w[i]:
+#                    memo[i % 2][j] = max(memo[i % 2][j], v[i] + memo[(i - 1) % 2][j - w[i]])
+#        
+#        return memo[(n - 1) % 2][C]
         
 #    def knapsack01(self, w, v, C):
 #        

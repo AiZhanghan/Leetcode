@@ -12,7 +12,15 @@
 
 状态
 
-状态转移
+状态转移 
+
+0-1 背包问题
+
+最长上升子序列（LIS）
+
+最长公共子序列（LCS）
+
+反向建立路径
 
 ## 题目
 
@@ -29,3 +37,11 @@
 * 337 House Robber III
 * 309 Best Time to Buy and Sell Stock with Cooldown[to do]
 * 0-1 knapsack
+* 300 Longest Increasing Subsequence
+* 376 Wiggle Subsequence 
+* 416 Partition Equal Subset Sum
+* 322 Coin Change
+* 377 
+* 474 
+* 139 
+* 494
