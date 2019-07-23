@@ -41,7 +41,7 @@
 * 376 Wiggle Subsequence 
 * 416 Partition Equal Subset Sum
 * 322 Coin Change
-* 377 
-* 474 
+* 377 Combination Sum IV
+* 474 Ones and Zeroes
 * 139 
 * 494
