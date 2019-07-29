@@ -43,5 +43,5 @@
 * 322 Coin Change
 * 377 Combination Sum IV
 * 474 Ones and Zeroes
-* 139 
-* 494
+* 139 Word Break
+* 494 Target Sum

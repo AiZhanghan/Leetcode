@@ -7,7 +7,10 @@ Created on Thu Jul 18 10:56:18 2019
 
 class Solution:
     def knapsack01(self, w, v, C):
-        
+        '''
+        F(n, C)考虑将n个物品放进容量为C的背包，使得价值最大
+        F(i, c) = max(F(i - 1, c), v(i) + F(i - 1, c - w(i)))
+        '''
         assert len(w) ==len(v)
         n = len(w)
         if n == 0:
