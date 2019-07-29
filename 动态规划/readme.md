@@ -22,6 +22,8 @@
 
 反向建立路径
 
+记忆化搜索用dict会比list快很多
+
 ## 题目
 
 * 70 Climbing Stairs
