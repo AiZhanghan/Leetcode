@@ -3,7 +3,15 @@ from typing import List
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        """DP"""
+        """DP
+        
+        Args:
+            s: str
+            wordDict: list[str]
+        
+        Return:
+            bool
+        """
         wordDict = set(wordDict)
         dp = [False for _ in range(len(s) + 1)]
         dp[0] = True
