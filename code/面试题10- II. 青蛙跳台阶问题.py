@@ -1,11 +1,12 @@
 class Solution:
     def numWays(self, n):
         """
-        parameter:
+        Args:
             n: int
-        return: int
+
+        Return: int
         """
-        a, b = 1, 1
+        a, b = 0, 1
         for _ in range(n):
             a, b = b, a + b
         return a % 1000000007

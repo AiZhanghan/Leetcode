@@ -1,9 +1,30 @@
 class Solution:    
     def replaceSpace(self, s):
         """
-        parameter:
+        time: O(N)
+        space: O(N)
+        
+        Args:
             s: str
-        return: str
+        
+        Return: str
         """
-        return s.replace(" ", "%20")
+        res = []
+        for c in s:
+            if c == " ":
+                res.append("%20")
+            else:
+                res.append(c)
+        return "".join(res)
+
+
+# class Solution:    
+#     def replaceSpace(self, s):
+#         """
+#         Args:
+#             s: str
+        
+#         Return: str
+#         """
+#         return s.replace(" ", "%20")
         

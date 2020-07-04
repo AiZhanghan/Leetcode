@@ -1,26 +1,30 @@
 class Solution:
     def findNumberIn2DArray(self, matrix, target):
         """
-        parameter:
+        time: O(M + N)
+        space: O(1)
+
+        Args:
             matrix: list[list[int]]
             target: int
-        return: bool
+        
+        Return: bool
         """
         if not matrix:
             return False
             
-        res = False
+        n = len(matrix)
+        m = len(matrix[0])
 
-        row = 0
-        col = len(matrix[0]) - 1
+        i = 0
+        j = m - 1
 
-        while row < len(matrix) and col >= 0:
-            if matrix[row][col] == target:
-                res = True
-                break
-            elif matrix[row][col] < target:
-                row += 1
+        while i < n and j >= 0:
+            if matrix[i][j] < target:
+                i += 1
+            elif matrix[i][j] > target:
+                j -= 1
             else:
-                col -= 1
+                return True
         
-        return res
+        return False

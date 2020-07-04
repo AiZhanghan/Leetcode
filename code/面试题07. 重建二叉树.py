@@ -9,46 +9,91 @@ class TreeNode:
 class Solution:
     def buildTree(self, preorder, inorder):
         """
-        parameter:
-            preorder: list[int]
-            inorder: list[int]
-        return: TreeNode
-        """
-        n = len(preorder)
-        if n != len(inorder):
-            return
+        time: O(N)
+        space: O(N)
 
-        return self._buildTree(preorder, inorder, 0, n-1, 0, n-1)
-    
-    def _buildTree(self, preorder, inorder, pre_left, pre_right, in_left, in_right):
-        """
-        parameter:
+        Args:
             preorder: list[int]
             inorder: list[int]
+        
+        Return: TreeNode
+        """
+        self.dic = {}
+        self.preorder = preorder
+
+        for i in range(len(inorder)):
+            self.dic[inorder[i]] = i
+        
+        return self._build_tree(0, 0, len(inorder) - 1)
+
+    def _build_tree(self, pre_left, in_left, in_right):
+        """
+        Args:
             pre_left: int
-            pre_right: int
             in_left: int
             in_right: int
-        return: TreeNode
-        """
-        if pre_left > pre_right or in_left > in_right:
-            return
         
-        root = TreeNode(preorder[pre_left])
-        # 根节点在inorder中的下标
-        root_pos_in = inorder.index(preorder[pre_left])
-        # 左子树节点数
-        left_length = root_pos_in - in_left
+        Return:
+            TreeNode
+        """
+        if in_left > in_right:
+            return
 
-        root.left = self._buildTree(preorder, inorder, 
-            pre_left+1, pre_left+left_length,
-            in_left, root_pos_in-1)
-            
-        root.right = self._buildTree(preorder, inorder, 
-            pre_left+left_length+1, pre_right,
-            root_pos_in+1, in_right)
-            
+        root = TreeNode(self.preorder[pre_left])
+
+        root_index = self.dic[root.val]
+        
+        left_len = root_index - in_left
+
+        root.left = self._build_tree(pre_left + 1, in_left, root_index - 1)
+        root.right = self._build_tree(pre_left + 1 + left_len, 
+            root_index + 1, in_right)
+        
         return root
+
+
+# class Solution:
+#     def buildTree(self, preorder, inorder):
+#         """
+#         time: O(N)
+#         space: O(N)
+
+#         Args:
+#             preorder: list[int]
+#             inorder: list[int]
+        
+#         Return: TreeNode
+#         """
+#         self.preorder = preorder
+#         self.inorder = inorder
+#         return self._build_tree(0, len(preorder), 0, len(inorder))
+    
+#     def _build_tree(self, pre_left, pre_right, in_left, in_right):
+#         """
+#         Args:
+#             pre_left: int
+#             pre_right: int
+#             in_left: int
+#             in_right: int
+        
+#         Return: TreeNode
+#         """
+#         if pre_left >= pre_right or in_left >= in_right:
+#             return
+        
+#         root = TreeNode(self.preorder[pre_left])
+#         # 根节点在inorder中的下标
+#         root_index = self.inorder.index(root.val)
+#         # 左子树节点数
+#         left_len = root_index - in_left
+
+#         root.left = self._build_tree(pre_left + 1, pre_left + 1 + left_len,
+#             in_left, root_index)
+            
+#         root.right = self._build_tree(pre_left + 1 + left_len, pre_right,
+#             root_index + 1, in_right)
+            
+#         return root
 
 
 if __name__ == "__main__":
