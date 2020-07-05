@@ -18,19 +18,19 @@ class Solution:
         """
         self.postorder = postorder
         self.dic = {val: i for i, val in enumerate(inorder)}
-        return self._build_tree(0, len(inorder), 0, len(postorder))
+        return self._build_tree(0, len(inorder) - 1, 0, len(postorder) - 1)
 
     def _build_tree(self, in_left, in_right, post_left, post_right):
-        if in_left >= in_right:
+        if in_left > in_right:
             return
         
-        root = TreeNode(self.postorder[post_right - 1])
+        root = TreeNode(self.postorder[post_right])
         root_index = self.dic[root.val]
         
         left_len = root_index - in_left
 
-        root.left  = self._build_tree(in_left, root_index, 
-            post_left, post_left + left_len)
+        root.left  = self._build_tree(in_left, root_index - 1, 
+            post_left, post_left + left_len - 1)
         root.right = self._build_tree(root_index + 1, in_right,
             post_left + left_len, post_right - 1)
         
