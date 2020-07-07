@@ -1,9 +1,14 @@
-from typing import List
-
-
 class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        """DFS"""
+    def exist(self, board, word):
+        """DFS
+        
+        Args:
+            board: list[list[str]]
+            word: str
+        
+        Return:
+            bool
+        """
         self.board = board
         self.word = word
         self.visited = [[False for _ in range(len(board[0]))] 
@@ -15,8 +20,18 @@ class Solution:
         return False
     
     def dfs(self, i: int, j: int, index: int) -> bool:
+        """
+        Args:
+            i: int
+            j: int
+            index: int
+        
+        Return:
+            bool
+        """
         if index == len(self.word):
             return True
+            
         if i < 0 or i >= len(self.board) \
             or j < 0 or j >= len(self.board[0]) \
             or self.visited[i][j] \
