@@ -8,4 +8,4 @@ SELECT
         b.Score >= a.Score) AS `Rank`
 FROM 
     Scores AS a
-ORDER BY a.Score DESC
+ORDER BY a.Score DESC;

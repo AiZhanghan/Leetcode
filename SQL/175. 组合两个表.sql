@@ -5,4 +5,4 @@ SELECT
     State
 FROM 
     Person LEFT OUTER JOIN Address
-    ON Person.PersonId = Address.PersonId
+    ON Person.PersonId = Address.PersonId;
