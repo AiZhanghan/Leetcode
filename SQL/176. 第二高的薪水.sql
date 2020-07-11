@@ -4,7 +4,12 @@
 -- LIMIT 1 OFFSET 1
 
 
-SELECT MAX(Salary) AS SecondHighestSalary
-FROM Employee
-WHERE Salary < (SELECT MAX(Salary)
-                FROM Employee);
+SELECT 
+    MAX(Salary) AS SecondHighestSalary
+FROM 
+    Employee
+WHERE 
+    Salary < (SELECT 
+                MAX(Salary)
+              FROM 
+                Employee);
