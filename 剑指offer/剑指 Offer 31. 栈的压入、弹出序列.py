@@ -17,6 +17,7 @@ class Solution:
                 i += 1
             
         return not stack
+        
 
 # class Solution:
 #     def validateStackSequences(self, pushed, popped):
