@@ -14,23 +14,20 @@ class Solution:
         while nums:
             x1, hp1 = nums[0]
             res += hp1
-            # to_delete = [0]
-            nums.pop(0)
-            i = 0
+            to_delete = [0]
+            i = 1
             while i < len(nums) and abs(nums[i][0] - x1) > 2 * y:
                 i += 1
             if i != len(nums):
                 x2, _ = nums[i]
-                # to_delete.append(i)
-                nums.pop(i)
-                # i += 1
+                to_delete.append(i)
+                i += 1
                 x = (x1 + x2) // 2
                 while i < len(nums) and abs(x - nums[i][0]) <= 5:
-                    # to_delete.append(i)
-                    nums.pop(i)
+                    to_delete.append(i)
                     i += 1
-            # for i in to_delete:
-            #     nums.pop(i)
+            for i, val in enumerate(to_delete):
+                nums.pop(val - i)
         return res
 
 
