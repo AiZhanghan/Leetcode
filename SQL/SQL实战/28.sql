@@ -10,4 +10,4 @@ FROM
 WHERE f.description LIKE "%robot%"
     AND f.film_id = fc.film_id
     AND c.category_id = fc.category_id
-    AND c.category_id = cc.category_id
+    AND c.category_id = cc.category_id;
