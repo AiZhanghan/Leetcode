@@ -1,2 +1,3 @@
-n - 1)
-        # res += 10 ** (res_len - 1) - 1
+, 98, 97]
+    # s = Solution(scores)
+    # print(s.query(1))
