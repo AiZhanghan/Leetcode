@@ -21,7 +21,7 @@ class Solution:
         left = start
         right = end
         while left <= right:
-            
+            pass
 
 
 
