@@ -25,6 +25,16 @@ class Solution:
             s2.append(l2.val)
             l2 = l2.next
         
-        dummy = ListNode(-1)
-        while s1 and s2:
-            dummy.
+        carry = 0
+        head = None
+        while s1 or s2 or carry:
+            val = carry
+            val += s1.pop() if s1 else 0
+            val += s2.pop() if s2 else 0
+            
+            node = ListNode(val % 10)
+            node.next = head
+            head = node
+            carry = val // 10
+        
+        return head
