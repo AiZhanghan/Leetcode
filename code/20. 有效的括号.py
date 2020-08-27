@@ -1,19 +1,37 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        """栈"""
-        dic = {
-            "(": ")",
-            "[": "]", 
-            "{": "}",
-            "?": "?"
-        }
-        stack = ["?"]
+        stack = []
         for c in s:
-            if c in dic:
+            if c in "([{":
                 stack.append(c)
-            elif dic[stack.pop()] != c:
-                return False
-        return len(stack) == 1
+            elif c == ")":
+                if not stack or stack.pop() != "(":
+                    return False
+            elif c == "]":
+                if not stack or stack.pop() != "[":
+                    return False
+            elif c == "}":
+                if not stack or stack.pop() != "{":
+                    return False
+        return not stack
+                
+
+# class Solution:
+#     def isValid(self, s: str) -> bool:
+#         """栈"""
+#         dic = {
+#             "(": ")",
+#             "[": "]", 
+#             "{": "}",
+#             "?": "?"
+#         }
+#         stack = ["?"]
+#         for c in s:
+#             if c in dic:
+#                 stack.append(c)
+#             elif dic[stack.pop()] != c:
+#                 return False
+#         return len(stack) == 1
         
 
 # class Solution:
@@ -38,3 +56,8 @@ class Solution:
 #                     res = False
 #                     break
 #         return res and not stack
+
+
+if __name__ == "__main__":
+    s = "()[]{}"
+    print(Solution().isValid(s))
