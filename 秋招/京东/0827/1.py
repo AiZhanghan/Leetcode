@@ -13,14 +13,15 @@ class Solution:
         if n < 3:
             return self.elements[n]
 
-        temp = n  
+        n
         i = 1
-        while temp >= 3 ** i:
-            temp -= 3 ** i
+        while n >= 3 ** i:
+            n -= 3 ** i
             i += 1
         
-        res = self.elements[(temp // 3 ** (i - 1))]
-        other = self.func(temp % 3 ** (i - 1) + (3 ** (i - 2) if i - 2 >= 1 else 0))
+        shan, yushu = divmod(n, 3 ** (i - 1))
+        res = self.elements[shan]
+        other = self.func(yushu + (3 ** (i - 2) if i - 2 > 0 else 0))
         return res + other
 
 
