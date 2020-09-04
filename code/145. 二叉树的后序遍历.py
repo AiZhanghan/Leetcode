@@ -15,17 +15,44 @@ class Solution:
         Return:
             list[int]
         """
-        if not root:
-            return []
         res = []
         stack = []
-        stack.append(root)
-        while stack:
-            node = stack.pop()
-            res.append(node.val)
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
+        pre = None
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+            temp = stack[-1]
+            if temp.right and temp.right != pre:
+                root = temp.right
+            else:
+                res.append(temp.val)
+                pre = temp
+                stack.pop()
+        return res
+
+
+
+# class Solution:
+#     def postorderTraversal(self, root):
+#         """
+#         Args:
+#             root: TreeNode
         
-        return res[::-1]
+#         Return:
+#             list[int]
+#         """
+#         if not root:
+#             return []
+#         res = []
+#         stack = []
+#         stack.append(root)
+#         while stack:
+#             node = stack.pop()
+#             res.append(node.val)
+#             if node.left:
+#                 stack.append(node.left)
+#             if node.right:
+#                 stack.append(node.right)
+        
+#         return res[::-1]
