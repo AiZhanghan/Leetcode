@@ -12,10 +12,10 @@ class Solution:
             list[int]
         """
         in_degrees = [0 for _ in range(numCourses)]
-        adj = [set() for _ in range(numCourses)]
+        graph = collections.defaultdict(list)
         for second, first in prerequisites:
             in_degrees[second] += 1
-            adj[first].add(second)
+            graph[first].append(second)
         
         res = []
         queue = collections.deque()
@@ -27,7 +27,7 @@ class Solution:
             top = queue.popleft()
             res.append(top)
 
-            for successor in adj[top]:
+            for successor in graph[top]:
                 in_degrees[successor] -= 1
                 if in_degrees[successor] == 0:
                     queue.append(successor)
