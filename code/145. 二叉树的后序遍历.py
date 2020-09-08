@@ -23,6 +23,7 @@ class Solution:
                 stack.append(root)
                 root = root.left
             temp = stack[-1]
+            # 有未遍历的右子树
             if temp.right and temp.right != pre:
                 root = temp.right
             else:
