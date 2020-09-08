@@ -22,7 +22,6 @@ class Solution:
                 heapq.heappush(pq, (counter[num], num))
         return [x for _, x in pq]
 
-
         
 # class Solution:
 #     def topKFrequent(self, nums, k):
