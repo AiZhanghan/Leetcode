@@ -1,4 +1,4 @@
-import collections
+from collections import deque
 
 
 class Solution:
@@ -11,24 +11,8 @@ class Solution:
         Return:
             list[int]
         """
-        if not nums or k == 0:
-            return []
+        res = []
+        queue = deque()
 
-        queue = collections.deque()
-        
-        for i in range(k):
-            while queue and queue[-1] < nums[i]:
-                queue.pop()
-            queue.append(nums[i])
-        
-        res = [queue[0]]
-
-        for i in range(k, len(nums)):
-            if queue[0] == nums[i - k]:
-                queue.popleft()
-            while queue and queue[-1] < nums[i]:
-                queue.pop()
-            queue.append(nums[i])
-            res.append(queue[0])
-        
-        return res
+        for r in range(len(nums)):
+            
