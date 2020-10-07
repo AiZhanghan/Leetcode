@@ -2,19 +2,26 @@ from typing import List
 
 
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
-        """三路快排
-        Do not return anything, modify nums in-place instead.
+    def sortColors(self, nums):
         """
-        p0 = cur = 0
-        p2 = len(nums) - 1
-        while cur <= p2:
-            if nums[cur] == 0:
-                nums[p0], nums[cur] = nums[cur], nums[p0]
-                p0 += 1
-                cur += 1
-            elif nums[cur] == 2:
-                nums[cur], nums[p2] = nums[p2], nums[cur]
-                p2 -= 1
+        三路快排
+        Do not return anything, modify nums in-place instead.
+        
+        Args:
+            nums: list[int]
+        """
+        # [0, l) == 0
+        # [r, len(nums) - 1) == 2
+        l = 0
+        r = len(nums) - 1
+        i = 0
+        while i <= r:
+            if nums[i] == 0:
+                nums[i], nums[l] = nums[l], nums[i]
+                l += 1
+                i += 1
+            elif nums[i] == 2:
+                nums[i], nums[r] = nums[r], nums[i]
+                r -= 1
             else:
-                cur += 1
+                i += 1
